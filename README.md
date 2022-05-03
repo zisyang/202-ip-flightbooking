@@ -7,7 +7,7 @@
 
 ## Detailed instructions of building the project and steps to execute
 
-1. Clone or download/unzip zip file from this repository, Open the command line where the project directory is located, e.g.
+1. Clone or download/unzip file from this repository, Open the command line where the project directory is located, e.g.
    ```
    cd <path to the project>/flightbooking
    ```
@@ -29,7 +29,7 @@
 
 
 ## Problems Statement
-1.  The primary problem is to extract the data from file for both flight detail information and input data, and store them into a dataset, which it needs to ensure that there's only one instance for entire data access.
+1.  The primary problem is to extract the data from files for both flight detail information and input data, and store them into a dataset, which it needs to ensure that there's only one instance for entire data access.
 2.  The secondary problem is to validate if the request is good to process in certain circumstance, such as, requested flight exists, the number of seats is available for the category, and also to check if the user's payment card is valid based on known rules for different credit card types.
 
 
@@ -52,23 +52,27 @@
      | DataSet      |
      | ----------- |
      | -static datasetInstance |
-     | -datasetData      |
+     | -datasetData ...     |
      | ----------------------- |
      | +static getInstance()   |
-     | +datasetOperstions()  |
+     | +datasetOperstions...()  |
 
 
 - Iterator
   - Iterator is used for traversal of the elements such as processing each booking in the list from top to bottom. It can do multiple processes while iterating each item, like create a processed list and a response message.
-  - ![](img/Iterator_diagram.png)
+
+    ![](img/Iterator_diagram.png)
   
+
 - Chain of Responsibility
   - The purpose of Chain of Responsibility is given more than one object an opportunity to handle a request by linking receiving objects together. To solve the second problem in this application design, the validation process uses this pattern to check if the request is acceptable to each rule. All the rules can be chained together so that the request can be easily handled by such a chain.
-  - ![](img/CoR_diagram.png)
+
+    ![](img/CoR_diagram.png)
 
 - Factory Method
   - Factory Method provides not only an interface to create objects, but also allows subclasses to control the actual operations. It's used to handle the output files for different file extension for each response object of the application.
-  - ![](img/Factory_diagram.png)
+
+    ![](img/Factory_diagram.png)
 
 ## Class Diagram
 ![](img/class_diagram.png)
