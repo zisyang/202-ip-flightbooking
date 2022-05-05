@@ -36,13 +36,13 @@ public class QueryBookingTool {
                 output_txt = String.format("Please enter correct booking details for %s: %s",
                         requestBooking.getBookingName(), Reason.getDescriptionFromCode(result));
                 DataSet.getInstance().getInvalids().add(output_txt);
-                logger.info(output_txt);
+                logger.warning(output_txt);
             } else {
 
                 Booked booked = DataSet.processBooking(requestBooking, true);
 
                 output_txt = String.format("Booking {%s} : %s", booked, Reason.getDescriptionFromCode(result));
-                logger.warning(output_txt);
+                logger.info(output_txt);
             }
 
             iter.next();
