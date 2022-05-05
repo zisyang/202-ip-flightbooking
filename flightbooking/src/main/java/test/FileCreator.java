@@ -35,7 +35,7 @@ public class FileCreator {
         Logger logger = Logger.getAnonymousLogger();
 
         if (Files.notExists(FilePath)) {
-            logger.log(Level.INFO, String.format("Creating new file '%s'%n", FilePath) );
+            logger.log(Level.INFO, String.format("Creating new file '%s'", FilePath) );
             if (!FilePath.toFile().createNewFile()) {
                 throw new IOException(
                         "File '" + FilePath.toString() + "' cannot be created. Please check permission or system lock");
