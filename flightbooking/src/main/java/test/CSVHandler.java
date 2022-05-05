@@ -54,6 +54,7 @@ public class CSVHandler {
                     }
                 }
             } catch (Exception e) {
+                System.out.println(e);
             }
 
         }
