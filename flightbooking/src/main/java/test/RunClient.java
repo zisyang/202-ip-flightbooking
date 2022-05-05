@@ -68,6 +68,7 @@ public class RunClient {
         System.out.println(" -=================================-");
 
         // System.out.println(ds.getBookeds());
+        // System.out.println(ds.getInvalids());
 
         FileCreator outputCSV = new FileCreator(out_csv, "csv");
         try {
@@ -77,8 +78,8 @@ public class RunClient {
             System.exit(1);
         }
 
-        // System.out.println(ds.getInvalids());
-
+        System.out.println("Output saved to File : " + out_csv);
+        
         FileCreator outputTXT = new FileCreator(out_txt, "txt");
         try {
             outputTXT.Save(true);
@@ -87,7 +88,6 @@ public class RunClient {
             System.exit(1);
         }
 
-        System.out.println("Output saved to File : " + out_csv);
         System.out.println("Message saved to File: " + out_txt);
 
     }
