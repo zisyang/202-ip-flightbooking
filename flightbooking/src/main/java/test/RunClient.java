@@ -41,7 +41,7 @@ public class RunClient {
         try {
             dshandler.createDataSet();
         } catch (Exception e) {
-            logger.log(Level.INFO, e);
+            logger.log(Level.INFO, e.toString());
             System.exit(1);
         }
 
