@@ -53,8 +53,7 @@ public class CSVHandler {
                         Content.add(line);
                     }
                 }
-            } finally {
-                reader.close();
+            } catch (Exception e) {
             }
 
         }
