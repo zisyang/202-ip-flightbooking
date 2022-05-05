@@ -10,17 +10,19 @@ import java.util.logging.Logger;
  */
 public class RunClient {
     public static void main(String[] args) {
-        // RunClient r = new RunClient();
+        RunClient r = new RunClient();
         Logger logger = Logger.getAnonymousLogger();
 
-        System.out.println("Hello World!");
+        logger.log(Level.INFO, "Hello World!");
         if (args.length < 4) {
-            System.out.println("Usage: " + r.getClass().getName() + " <arg1> <arg2> <arg3> <arg4>");
-            System.out.println("  arg1 - path to the input data (Sample.csv)" + "");
-            System.out.println("  arg2 - path to flight details to populate DB (flights.csv)" + "");
-            System.out.println("  arg3 - path to Output.csv" + " - e.g.for successful result");
-            System.out.println("  arg4 - path to Output.txt" + " - e.g.for error message");
-
+            String msg1 = "   arg1 - path to the input data (Sample.csv)";
+            String msg2 = "   arg2 - path to flight details to populate DB (flights.csv)";
+            String msg3 = "   arg3 - path to Output.csv - e.g.for successful result";
+            String msg4 = "   arg4 - path to Output.txt - e.g.for error message";
+            logger.log(Level.INFO, 
+                  String.format("%n Usage: %s <arg1> <arg2> <arg3> <arg4> %n %s %n %s %n %s %n %s", 
+                                r.getClass().getName(), msg1, msg2, msg3, msg4 ) );
+                                
             System.exit(64); /* exit(64) command line usage error */
         }
 
