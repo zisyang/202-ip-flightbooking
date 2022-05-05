@@ -38,7 +38,7 @@ public class RunClient {
         try {
             dshandler.createDataSet();
         } catch (Exception e) {
-            System.err.println(e);
+            logger.log(e);
             System.exit(1);
         }
 
