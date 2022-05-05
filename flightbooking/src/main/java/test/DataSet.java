@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import model.Booked;
@@ -30,7 +29,7 @@ public class DataSet {
     public static DataSet getInstance() {
         if (datasetInstance == null) {
             Logger logger = Logger.getAnonymousLogger();
-            logger.log(Level.INFO, "Create new DataSet Instance");
+            logger.info("Create new DataSet Instance");
 
             datasetInstance = new DataSet();
         }

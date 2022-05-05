@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FileCreator {
@@ -36,7 +35,7 @@ public class FileCreator {
 
         if (Files.notExists(FilePath)) {
             logger.info("Creating new file " + FilePath.toString());
-            // logger.log(Level.INFO, String.format("Creating new file '%s'", FilePath) );
+            
             if (!FilePath.toFile().createNewFile()) {
                 throw new IOException(
                         "File '" + FilePath.toString() + "' cannot be created. Please check permission or system lock");
@@ -59,7 +58,7 @@ public class FileCreator {
                  * closing the resource is handled automatically by the try-with-resources.
                  */
             } catch (Exception e) {
-                logger.log(Level.SEVERE, e.toString());
+                logger.severe(e.toString());
             }
 
         }

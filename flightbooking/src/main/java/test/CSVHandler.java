@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CSVHandler {
@@ -57,7 +56,7 @@ public class CSVHandler {
                     }
                 }
             } catch (Exception e) {
-                logger.log(Level.SEVERE, e.toString());
+                logger.severe(e.toString());
             }
 
         }
