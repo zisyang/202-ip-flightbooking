@@ -17,7 +17,7 @@ public class FileCreator {
     ArrayList<String> content;
 
     public FileCreator(String pathToFile, String extension) {
-        FilePath = Paths.get(pathToFile);
+        FilePath = Paths.get(pathToFile.trim());
         OutputFile output = null;
         if (extension.equals("csv")) {
             output = new OutputCSVFactory();
