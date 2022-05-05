@@ -81,6 +81,10 @@
 ![](img/JUnitTest.png)
 
 #### Test Case 1
+Flight Detail:
+
+![](img/TestCase1_flights.png)
+
 Input:
 
 ![](img/TestCase1_input.png)
@@ -99,6 +103,10 @@ Output.txt:
 
 
 #### Test Case 2
+Flight Detail:
+
+![](img/TestCase2_flights.png)
+
 Input:
 
 ![](img/TestCase2_input.png)
