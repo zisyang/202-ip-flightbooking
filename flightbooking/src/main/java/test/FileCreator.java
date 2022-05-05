@@ -32,8 +32,10 @@ public class FileCreator {
     }
 
     public void Save(boolean overwriteOK) throws IOException {
+        Logger logger = Logger.getLogger(CSVHandler.class.getName());
+
         if (Files.notExists(FilePath)) {
-            System.out.printf("Creating new file '%s'%n", FilePath);
+            logger.log(Level.INFO, String.format("Creating new file '%s'%n", FilePath) );
             if (!FilePath.toFile().createNewFile()) {
                 throw new IOException(
                         "File '" + FilePath.toString() + "' cannot be created. Please check permission or system lock");
@@ -44,8 +46,6 @@ public class FileCreator {
         if (!Files.isWritable(FilePath)) {
             throw new IOException("File '" + FilePath.toString() + "' is not Writable");
         } else {
-            Logger logger = Logger.getLogger(CSVHandler.class.getName());
-
             FileWriter out = new FileWriter(FilePath.toFile());
             try (BufferedWriter writer = new BufferedWriter(out)) {
 

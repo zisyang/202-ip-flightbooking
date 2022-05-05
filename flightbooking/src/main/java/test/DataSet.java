@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import model.Booked;
 import model.Booking;
@@ -27,7 +29,9 @@ public class DataSet {
 
     public static DataSet getInstance() {
         if (datasetInstance == null) {
-            System.out.println("Create new DataSet Instance");
+            Logger logger = Logger.getLogger(DataSet.class.getName());
+            logger.log(Level.INFO, "Create new DataSet Instance");
+
             datasetInstance = new DataSet();
         }
         return datasetInstance;
