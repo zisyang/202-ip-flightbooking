@@ -36,7 +36,7 @@ public class CSVHandler {
 
     public void Load(int skipTopLine) throws Exception {
         if (Files.notExists(FilePath)) {
-            throw new FileNotFoundException();
+            throw new FileNotFoundException(FilePath.toString());
         } else if (!Files.isReadable(FilePath)) {
             throw new IOException("File '" + FilePath.toString() + "' is not Readable");
         } else {

@@ -40,8 +40,8 @@ public class RunClient {
         DataSetCSVHandler dshandler = new DataSetCSVHandler(flights);
         try {
             dshandler.createDataSet();
-        } catch (Exception e) {
-            logger.log(Level.SEVERE, e.getMessage());
+        } catch (Exception e) { 
+            logger.log(Level.SEVERE, e.toString());
             System.exit(1);
         }
 
