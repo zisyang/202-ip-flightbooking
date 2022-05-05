@@ -1,6 +1,7 @@
 package test;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 /**
  * Hello world!
@@ -9,6 +10,7 @@ import java.io.IOException;
 public class RunClient {
     public static void main(String[] args) {
         RunClient r = new RunClient();
+        Logger logger = new Logger();
 
         System.out.println("Hello World!");
         if (args.length < 4) {
