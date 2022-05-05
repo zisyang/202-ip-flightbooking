@@ -1,6 +1,7 @@
 package test;
 
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -10,7 +11,7 @@ import java.util.logging.Logger;
 public class RunClient {
     public static void main(String[] args) {
         RunClient r = new RunClient();
-        Logger logger = new Logger();
+        Logger logger = Logger.getLogger(RunClient.class.getName());
 
         System.out.println("Hello World!");
         if (args.length < 4) {
@@ -40,7 +41,7 @@ public class RunClient {
         try {
             dshandler.createDataSet();
         } catch (Exception e) {
-            logger.log(e);
+            logger.log(Level.INFO, e);
             System.exit(1);
         }
 
