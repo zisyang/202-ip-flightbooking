@@ -1,1 +1,8 @@
+test/QueryBookingResultsIteratorTest.class
+test/DataSetTest.class
+test/ValidateCardHandlerTest.class
 test/RunClientTest.class
+test/QueryBookingResultsTest.class
+test/ValidateFlightHandlerTest.class
+test/QueryBookingToolTest.class
+test/ValidateSeatsHandlerTest.class

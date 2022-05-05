@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: test.RunClientTest
+Test set: test.ValidateCardHandlerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in test.RunClientTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in test.ValidateCardHandlerTest
