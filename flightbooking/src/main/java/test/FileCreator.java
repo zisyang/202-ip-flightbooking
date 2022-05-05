@@ -43,13 +43,16 @@ public class FileCreator {
             throw new IOException("File '" + FilePath.toString() + "' is not Writable");
         } else {
             FileWriter out = new FileWriter(FilePath.toFile());
-            BufferedWriter writer = new BufferedWriter(out);
+            try (BufferedWriter writer = new BufferedWriter(out)) {
 
-            for (String line : content) {
-                writer.write(line);
-                writer.newLine();
+                for (String line : content) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+                writer.close();
+            } catch (Exception e) {
             }
-            writer.close();
+
         }
     }
 }
