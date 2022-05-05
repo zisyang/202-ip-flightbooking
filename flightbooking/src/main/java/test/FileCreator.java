@@ -22,8 +22,11 @@ public class FileCreator {
         } else if (extension.equals("txt")) {
             output = new OutputTXTFactory();
         }
-        content = output.prepare();
-
+        if (output != null) {
+            content = output.prepare();
+        } else {
+            content = new ArrayList<>();
+        }
     }
 
     public void Save(boolean overwriteOK) throws IOException {
