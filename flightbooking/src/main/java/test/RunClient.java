@@ -69,7 +69,8 @@ public class RunClient {
             System.exit(1);
         }
 
-        logger.info("Output saved to File : " + out_csv);
+        msg = "Output saved to File : " + out_csv;
+        logger.info(msg);
 
         FileCreator outputTXT = new FileCreator(out_txt, "txt");
         try {
@@ -79,7 +80,8 @@ public class RunClient {
             System.exit(1);
         }
 
-        logger.info("Message saved to File: " + out_txt);
+        msg = "Message saved to File: " + out_txt;
+        logger.info(msg);
 
     }
 }
