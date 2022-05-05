@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  */
 public class RunClient {
     public static void main(String[] args) {
-        RunClient r = new RunClient();
+        // RunClient r = new RunClient();
         Logger logger = Logger.getAnonymousLogger();
 
         System.out.println("Hello World!");
@@ -32,8 +32,8 @@ public class RunClient {
         String out_csv = args[2];
         String out_txt = args[3];
 
-        System.out.println("Input Data use File : " + input);
-        System.out.println("Populate DB use File: " + flights);
+        logger.log(Level.INFO, "Input Data use File : " + input);
+        logger.log(Level.INFO, "Populate DB use File: " + flights);
 
         DataSet ds = DataSet.getInstance();
 
@@ -62,10 +62,10 @@ public class RunClient {
         qt.executeQuery();
         qt.run();
 
-        System.out.println(" -= Final view of Flights DataSet =-");
+        logger.log(Level.INFO, " -= Final view of Flights DataSet =-");
         // System.out.println(ds.getFlightsMap());
         ds.printFlights();
-        System.out.println(" -=================================-");
+        logger.log(Level.INFO, " -=================================-");
 
         // System.out.println(ds.getBookeds());
         // System.out.println(ds.getInvalids());
