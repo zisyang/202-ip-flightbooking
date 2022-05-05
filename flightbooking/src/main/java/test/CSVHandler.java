@@ -41,16 +41,22 @@ public class CSVHandler {
             throw new IOException("File '" + FilePath.toString() + "' is not Readable");
         } else {
             FileReader in = new FileReader(FilePath.toFile());
-            BufferedReader reader = new BufferedReader(in);
-            String line = "";
 
-            while ((line = reader.readLine()) != null) {
-                if (skipTopLine > 0) {
-                    skipTopLine--;
-                } else {
-                    Content.add(line);
+            try (BufferedReader reader = new BufferedReader(in)) {
+
+                String line = "";
+
+                while ((line = reader.readLine()) != null) {
+                    if (skipTopLine > 0) {
+                        skipTopLine--;
+                    } else {
+                        Content.add(line);
+                    }
                 }
+            } finally {
+                reader.close();
             }
+
         }
     }
 
