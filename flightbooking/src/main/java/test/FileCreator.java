@@ -50,7 +50,7 @@ public class FileCreator {
                     writer.newLine();
                 }
                 /*
-                 * writer.close(); 
+                 * writer.close()
                  *  closing the resource is handled automatically by the try-with-resources.
                  */
             } catch (Exception e) {
