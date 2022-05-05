@@ -1,6 +1,7 @@
 package test;
 
 import java.util.LinkedList;
+import java.util.zip.DataFormatException;
 
 import model.Booking;
 
