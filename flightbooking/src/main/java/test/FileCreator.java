@@ -32,7 +32,7 @@ public class FileCreator {
     }
 
     public void Save(boolean overwriteOK) throws IOException {
-        Logger logger = Logger.getLogger(FileCreator.class.getName());
+        Logger logger = Logger.getAnonymousLogger();
 
         if (Files.notExists(FilePath)) {
             logger.log(Level.INFO, String.format("Creating new file '%s'%n", FilePath) );

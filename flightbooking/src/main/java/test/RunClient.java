@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class RunClient {
     public static void main(String[] args) {
         RunClient r = new RunClient();
-        Logger logger = Logger.getLogger(RunClient.class.getName());
+        Logger logger = Logger.getAnonymousLogger();
 
         System.out.println("Hello World!");
         if (args.length < 4) {

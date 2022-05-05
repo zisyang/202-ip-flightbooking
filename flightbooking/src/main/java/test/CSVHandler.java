@@ -42,7 +42,7 @@ public class CSVHandler {
         } else if (!Files.isReadable(FilePath)) {
             throw new IOException("File '" + FilePath.toString() + "' is not Readable");
         } else {
-            Logger logger = Logger.getLogger(CSVHandler.class.getName());
+            Logger logger = Logger.getAnonymousLogger();
 
             FileReader in = new FileReader(FilePath.toFile());
             try (BufferedReader reader = new BufferedReader(in)) {
