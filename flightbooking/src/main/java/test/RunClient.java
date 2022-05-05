@@ -38,7 +38,7 @@ public class RunClient {
         try {
             dshandler.createDataSet();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e);
             System.exit(1);
         }
 
@@ -48,7 +48,7 @@ public class RunClient {
         try {
             bhandler.createBookingList();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e);
             System.exit(1);
         }
 
@@ -70,7 +70,7 @@ public class RunClient {
         try {
             outputCSV.Save(true);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println(e);
             System.exit(1);
         }
 
@@ -80,7 +80,7 @@ public class RunClient {
         try {
             outputTXT.Save(true);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println(e);
             System.exit(1);
         }
 

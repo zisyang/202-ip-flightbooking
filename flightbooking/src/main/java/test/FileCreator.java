@@ -54,7 +54,7 @@ public class FileCreator {
                  *  closing the resource is handled automatically by the try-with-resources.
                  */
             } catch (Exception e) {
-                System.out.println(e);
+                System.err.println(e);
             }
 
         }
