@@ -29,7 +29,7 @@ public class DataSet {
 
     public static DataSet getInstance() {
         if (datasetInstance == null) {
-            Logger logger = Logger.getLogger(DataSet.class.getName());
+            Logger logger = Logger.getAnonymousLogger();//getLogger(DataSet.class.getName()); 
             logger.log(Level.INFO, "Create new DataSet Instance");
 
             datasetInstance = new DataSet();

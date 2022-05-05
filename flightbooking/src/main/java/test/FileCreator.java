@@ -32,7 +32,7 @@ public class FileCreator {
     }
 
     public void Save(boolean overwriteOK) throws IOException {
-        Logger logger = Logger.getLogger(CSVHandler.class.getName());
+        Logger logger = Logger.getLogger(FileCreator.class.getName());
 
         if (Files.notExists(FilePath)) {
             logger.log(Level.INFO, String.format("Creating new file '%s'%n", FilePath) );
