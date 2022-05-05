@@ -34,7 +34,7 @@ public class FileCreator {
         Logger logger = Logger.getAnonymousLogger();
 
         if (Files.notExists(FilePath)) {
-            logger.info("Creating new file " + FilePath.toString());
+            logger.info("Creating new file {0}", FilePath.toString());
             
             if (!FilePath.toFile().createNewFile()) {
                 throw new IOException(
