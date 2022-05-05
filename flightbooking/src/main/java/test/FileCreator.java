@@ -8,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FileCreator {
 
@@ -42,6 +44,8 @@ public class FileCreator {
         if (!Files.isWritable(FilePath)) {
             throw new IOException("File '" + FilePath.toString() + "' is not Writable");
         } else {
+            Logger logger = Logger.getLogger(CSVHandler.class.getName());
+
             FileWriter out = new FileWriter(FilePath.toFile());
             try (BufferedWriter writer = new BufferedWriter(out)) {
 
@@ -51,10 +55,10 @@ public class FileCreator {
                 }
                 /*
                  * writer.close()
-                 *  closing the resource is handled automatically by the try-with-resources.
+                 * closing the resource is handled automatically by the try-with-resources.
                  */
             } catch (Exception e) {
-                System.err.println(e);
+                logger.log(Level.SEVERE, e.toString());
             }
 
         }

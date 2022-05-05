@@ -51,7 +51,7 @@ public class RunClient {
         try {
             bhandler.createBookingList();
         } catch (Exception e) {
-            System.err.println(e);
+            logger.log(Level.SEVERE, e.toString());
             System.exit(1);
         }
 
@@ -73,7 +73,7 @@ public class RunClient {
         try {
             outputCSV.Save(true);
         } catch (IOException e) {
-            System.err.println(e);
+            logger.log(Level.SEVERE, e.toString());
             System.exit(1);
         }
 
@@ -83,7 +83,7 @@ public class RunClient {
         try {
             outputTXT.Save(true);
         } catch (IOException e) {
-            System.err.println(e);
+            logger.log(Level.SEVERE, e.toString());
             System.exit(1);
         }
 

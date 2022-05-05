@@ -8,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CSVHandler {
     Path FilePath;
@@ -40,8 +42,9 @@ public class CSVHandler {
         } else if (!Files.isReadable(FilePath)) {
             throw new IOException("File '" + FilePath.toString() + "' is not Readable");
         } else {
-            FileReader in = new FileReader(FilePath.toFile());
+            Logger logger = Logger.getLogger(CSVHandler.class.getName());
 
+            FileReader in = new FileReader(FilePath.toFile());
             try (BufferedReader reader = new BufferedReader(in)) {
 
                 String line = "";
@@ -54,7 +57,7 @@ public class CSVHandler {
                     }
                 }
             } catch (Exception e) {
-                System.err.println(e);
+                logger.log(Level.SEVERE, e.toString());
             }
 
         }
