@@ -11,6 +11,7 @@ public class RunClient {
     public static void main(String[] args) {
         RunClient r = new RunClient();
         Logger logger = Logger.getAnonymousLogger();
+        String msg = "";
 
         logger.info("Hello World!");
         if (args.length < 4) {
@@ -18,7 +19,7 @@ public class RunClient {
             String msg2 = "   arg2 - path to flight details to populate DB (flights.csv)";
             String msg3 = "   arg3 - path to Output.csv - e.g.for successful result";
             String msg4 = "   arg4 - path to Output.txt - e.g.for error message";
-            String msg = String.format("%n Usage: %s <arg1> <arg2> <arg3> <arg4> %n %s %n %s %n %s %n %s",
+            msg = String.format("%n Usage: %s <arg1> <arg2> <arg3> <arg4> %n %s %n %s %n %s %n %s",
                           r.getClass().getName(), msg1, msg2, msg3, msg4 );
 
             logger.info(msg);
@@ -34,8 +35,10 @@ public class RunClient {
         String out_csv = args[2];
         String out_txt = args[3];
 
-        logger.info("Input Data use File : " + input);
-        logger.info("Populate DB use File: " + flights);
+        msg = "Input Data use File : " + input;
+        logger.info(msg);
+        msg = "Populate DB use File: " + flights;
+        logger.info(msg);
 
         DataSet ds = DataSet.getInstance();
 
