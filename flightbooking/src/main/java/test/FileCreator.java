@@ -33,7 +33,7 @@ public class FileCreator {
 
     public void Save(boolean overwriteOK) throws IOException {
         if (Files.notExists(FilePath)) {
-            System.out.printf("Creating new file '%s'\n", FilePath);
+            System.out.printf("Creating new file '%s'%n", FilePath);
             if (!FilePath.toFile().createNewFile()) {
                 throw new IOException(
                         "File '" + FilePath.toString() + "' cannot be created. Please check permission or system lock");

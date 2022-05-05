@@ -1,6 +1,7 @@
 package test;
 
 import java.util.LinkedList;
+import java.util.zip.DataFormatException;
 
 import model.Flight;
 
@@ -21,7 +22,7 @@ public class DataSetCSVHandler {
             if (col.length < 6) {
                 String message = String.format("Insufficient data fields, please check line '%s' in file '%s'", row,
                         datafile.getFilePath());
-                throw new Exception(message);
+                throw new DataFormatException(message);
             }
             String category = col[0];
             String flightNumber = col[1];
