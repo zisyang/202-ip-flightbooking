@@ -3,13 +3,8 @@ package test;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-/**
- * Hello world!
- *
- */
 public class RunClient {
     public static void main(String[] args) {
-        RunClient r = new RunClient();
         Logger logger = Logger.getAnonymousLogger();
         String msg = "";
 
@@ -20,15 +15,12 @@ public class RunClient {
             String msg3 = "   arg3 - path to Output.csv - e.g.for successful result";
             String msg4 = "   arg4 - path to Output.txt - e.g.for error message";
             msg = String.format("%n Usage: %s <arg1> <arg2> <arg3> <arg4> %n %s %n %s %n %s %n %s",
-                          r.getClass().getName(), msg1, msg2, msg3, msg4 );
+                          RunClient.class.getName(), msg1, msg2, msg3, msg4 );
 
             logger.info(msg);
 
             System.exit(64); /* exit(64) command line usage error */
         }
-
-        // for(String s: args)
-        // System.out.println(s);
 
         String input = args[0];
         String flights = args[1];
@@ -50,8 +42,6 @@ public class RunClient {
             System.exit(1);
         }
 
-        // System.out.println(ds.getFlightsMap());
-
         BookingCSVHandler bhandler = new BookingCSVHandler(input);
         try {
             bhandler.createBookingList();
@@ -60,7 +50,6 @@ public class RunClient {
             System.exit(1);
         }
 
-        // System.out.println(ds.getBooking());
 
         QueryBookingTool qt = new QueryBookingTool();
 
@@ -68,12 +57,9 @@ public class RunClient {
         qt.run();
 
         logger.info(" -= Final view of Flights DataSet =-");
-        // System.out.println(ds.getFlightsMap());
         ds.printFlights();
         logger.info(" -=================================-");
 
-        // System.out.println(ds.getBookeds());
-        // System.out.println(ds.getInvalids());
 
         FileCreator outputCSV = new FileCreator(out_csv, "csv");
         try {

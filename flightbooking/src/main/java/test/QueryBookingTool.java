@@ -21,8 +21,6 @@ public class QueryBookingTool {
         
         while (!iter.isDone()) {
 
-            // System.out.println(iter.currentItem());
-
             Booking requestBooking = (Booking) iter.currentItem();
 
             ValidateHandler vf = new ValidateFlightHandler();

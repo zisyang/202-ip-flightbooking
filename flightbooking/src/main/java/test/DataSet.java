@@ -37,7 +37,6 @@ public class DataSet {
     }
 
     public static String createKeyString(String flightNumber, String category) {
-        // Premium Economy -> PremiumEconomy
         return String.format("%s_%s", flightNumber, Category.getNameFromText(category));
     }
 
