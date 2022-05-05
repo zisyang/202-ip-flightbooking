@@ -29,7 +29,10 @@ public class FileCreator {
     public void Save(boolean overwriteOK) throws IOException {
         if (Files.notExists(FilePath)) {
             System.out.printf("new file '%s' created\n", FilePath);
-            FilePath.toFile().createNewFile();
+            if (!FilePath.toFile().createNewFile()) {
+                throw new IOException(
+                        "File '" + FilePath.toString() + "' cannot be created. Please check permission or system lock");
+            }
         } else if (Files.exists(FilePath) && !overwriteOK) {
             throw new FileAlreadyExistsException(FilePath.toString() + " and don't want to overwrite");
         }
