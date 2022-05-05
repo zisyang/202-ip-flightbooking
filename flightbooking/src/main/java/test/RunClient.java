@@ -80,7 +80,7 @@ public class RunClient {
             System.exit(1);
         }
 
-        System.out.println("Output saved to File : " + out_csv);
+        logger.log(Level.INFO,"Output saved to File : " + out_csv);
         
         FileCreator outputTXT = new FileCreator(out_txt, "txt");
         try {
@@ -90,7 +90,7 @@ public class RunClient {
             System.exit(1);
         }
 
-        System.out.println("Message saved to File: " + out_txt);
+        logger.log(Level.INFO,"Message saved to File: " + out_txt);
 
     }
 }
